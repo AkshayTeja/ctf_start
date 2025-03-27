@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTF Started</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1"></script>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=array@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      .animated-text {
+        animation: bounce 1s infinite;
+        font-family: "Array", sans-serif;
+        letter-spacing: 5px;
+        font-size: 6rem;
+      }
+      .sider {
+        font-family: "Array", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500 h-screen flex flex-col items-center justify-center text-white space-y-4"
+  >
+    <h1 class="text-6xl font-bold text-center animated-text">
+      THE CTF HAS BEEN LAUNCHED!
+    </h1>
+    <h1 class="text-6xl font-bold text-center sider">
+      PARTICIPANTS CAN START FROM 2 PM TODAY
+    </h1>
+
+    <script>
+      function launchConfetti() {
+        confetti({
+          particleCount: 100,
+          spread: 160,
+          startVelocity: 30,
+          origin: { y: 0, x: Math.random() },
+        });
+      }
+
+      setInterval(launchConfetti, 500);
+    </script>
+  </body>
+</html>
